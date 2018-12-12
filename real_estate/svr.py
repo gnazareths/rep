@@ -12,10 +12,10 @@ train_filename = "~/real_estate/data/train_df_smote.csv"
 test_filename = "~/real_estate/data/supervised_dfs/test_df_pca.csv"
 output_filename = "~/real_estate/data/supervised_dfs/svr_smote.pkl"
 
-def svr(train_df, test_df, output_filename):
+def svr(train_filename, test_filename, output_filename):
     
-    train_df = pd.read_csv(train_df)
-    test_df = pd.read_csv(test_df)
+    train_df = pd.read_csv(train_filename)
+    test_df = pd.read_csv(test_filename)
     
     features = train_df.columns[:-1]
     X_train = train_df[features]
@@ -24,7 +24,7 @@ def svr(train_df, test_df, output_filename):
     y_test = test_df["target"]
     
     svr = SVR()
-    svr.fit(X_train, y_train)
+    svr.fit(X_train.values, y_train.values)
     joblib.dump(svr, output_filename)
     
     return
