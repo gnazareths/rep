@@ -10,7 +10,7 @@ np.random.seed(42)
 
 train_filename = "~/real_estate/data/train_df_smote.csv"
 test_filename = "~/real_estate/data/supervised_dfs/test_df_pca.csv"
-output_filename = "~/real_estate/data/supervised_dfs/svr_smote.pkl"
+output_filename = "/home/gnazareths/real_estate/data/supervised_dfs/svr_smote.pkl"
 
 def svr(train_filename, test_filename, output_filename):
     
